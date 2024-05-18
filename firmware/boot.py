@@ -15,9 +15,7 @@ applied = bootcfg(
     sense=sense_pin,  # column
     source=source_pin, # row
     storage=False,
-    usb_id=('KMK Keyboards', "Custom 60% Ergo"),
+    usb_id=('Parmar Keyboards', "Dactyl Manuform"),
 )
 
 print(applied)
-
-
