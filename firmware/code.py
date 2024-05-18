@@ -75,6 +75,17 @@ TAPDANCE_CAPS = KC.TD(KC.LSFT, KC.CW, KC.CAPS, tap_time=500)
 
 my_keymap = process_keymap("keymap.json")
 
+# Replace KC.LSFT with TAPDANCE_CAPS
+for layer in my_keymap:
+    for i, key in enumerate(layer):
+        if key == KC.LSFT:
+            layer[i] = TAPDANCE_CAPS
+
+keyboard.keymap = my_keymap
+
+if __name__ == '__main__':
+    keyboard.go()
+
 keyboard.keymap = my_keymap
 
 if __name__ == '__main__':
