@@ -5,13 +5,22 @@ from kmk.keys import KC
 from kmk.modules.layers import Layers
 from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.modules.combos import Combos, Chord, Sequence
+from kmk.modules.capsword import CapsWord
+from kmk.modules.tapdance import TapDance
 
 keyboard = KMKKeyboard()
 
 keyboard.extensions.append(MediaKeys())
 keyboard.modules.append(Layers())
+
 combos = Combos()
 keyboard.modules.append(combos)
+
+caps_word = CapsWord()
+keyboard.modules.append(caps_word)
+
+tapdance = TapDance()
+keyboard.modules.append(tapdance)
 
 split = Split(
     data_pin=keyboard.data_pin,
@@ -58,11 +67,11 @@ def process_keymap(path):
     return keymap
 
 combos.combos = [
-    Chord((KC.F3, KC.F4), KC.ENT),
-    Chord((KC.F5, KC.F6), KC.ENT),
-    Sequence((KC.Y, KC.H, KC.N), KC.TG(1), timeout=100, per_key_timeout=True),
-    Sequence((KC.T, KC.G, KC.B), KC.TG(2), timeout=100, per_key_timeout=True),
+    Chord((KC.UP, KC.DOWN), KC.ENT),
+    Chord((KC.LEFT, KC.RGHT), KC.ENT),
 ]
+
+TAPDANCE_CAPS = KC.TD(KC.LSFT, KC.CW, KC.CAPS, tap_time=500)
 
 my_keymap = process_keymap("keymap.json")
 
