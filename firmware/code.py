@@ -65,7 +65,6 @@ combos.combos = [
 ]
 
 my_keymap = process_keymap("keymap.json")
-my_keymap
 
 keyboard.keymap = my_keymap
 
