@@ -2,10 +2,10 @@ import board
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
 from kmk.scanners import DiodeOrientation
 
-from storge import getmount
+from storage import getmount
 name = str(getmount('/').label)
 
-col_pins = (
+col_wiring = (
     board.A3,
     board.GP28,
     board.GP27,
@@ -14,7 +14,7 @@ col_pins = (
     board.GP14
 )
 
-row_pins = (
+row_wiring = (
     board.GP3,
     board.GP4,
     board.GP5,
@@ -24,7 +24,7 @@ row_pins = (
 )
 
 if name.endswith('L'):
-    col_pins = (
+    col_wiring = (
         board.GP3,
         board.GP4,
         board.GP5,
@@ -33,7 +33,7 @@ if name.endswith('L'):
         board.GP8
     )
 
-    row_pins = (
+    row_wiring = (
         board.GP14,
         board.GP15,
         board.GP26,
@@ -44,22 +44,8 @@ if name.endswith('L'):
 
 # for the left side of the keyboard
 class KMKKeyboard(_KMKKeyboard):
-    row_pins = (
-        board.GP14,
-        board.GP15,
-        board.GP26,
-        board.GP27,
-        board.GP28,
-        board.A3
-    )
-    col_pins = (
-        board.GP3,
-        board.GP4,
-        board.GP5,
-        board.GP6,
-        board.GP7,
-        board.GP8
-    )
+    row_pins = row_wiring
+    col_pins = col_wiring
     data_pin = board.GP1
     data_pin2 = board.GP0
     # rgb_pixel_pin = pins[avr['D3']]
