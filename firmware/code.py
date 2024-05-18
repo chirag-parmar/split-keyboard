@@ -85,8 +85,3 @@ keyboard.keymap = my_keymap
 
 if __name__ == '__main__':
     keyboard.go()
-
-keyboard.keymap = my_keymap
-
-if __name__ == '__main__':
-    keyboard.go()
