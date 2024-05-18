@@ -71,7 +71,7 @@ combos.combos = [
     Chord((KC.LEFT, KC.RGHT), KC.ENT),
 ]
 
-TAPDANCE_CAPS = KC.TD(KC.LSFT, KC.CW, tap_time=1000)
+TAPDANCE_CAPS = KC.TD(KC.LSFT, KC.CW, tap_time=80)
 
 my_keymap = process_keymap("keymap.json")
 
