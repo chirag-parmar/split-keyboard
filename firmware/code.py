@@ -72,8 +72,8 @@ combos.combos = [
     Chord((KC.LABK, KC.LCBR), KC.LBRC),
     Chord((KC.RABK, KC.RCBR), KC.RBRC),
     Chord((KC.F1, KC.F2, KC.LCTL, KC.RCTL), KC.TG(3)),
-    Sequence((KC.F18, KC.F19, KC.F20), KC.MW_UP, timeout=500),
-    Sequence((KC.F21, KC.F22, KC.F23), KC.MW_DN, timeout=500)
+    Sequence((KC.F18, KC.F19, KC.F20), KC.MW_UP, timeout=1000),
+    Sequence((KC.F21, KC.F22, KC.F23), KC.MW_DN, timeout=1000)
 ]
 
 TAPDANCE_CAPS_LEFT = KC.TD(KC.LSFT, KC.CW, tap_time=200)
