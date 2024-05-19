@@ -76,12 +76,12 @@ combos.combos = [
     Sequence((KC.F21, KC.F22, KC.F23), KC.MW_DN, timeout=500)
 ]
 
-TAPDANCE_CAPS_LEFT = KC.TD(KC.LSFT, KC.CW, tap_time=80)
-TAPDANCE_CAPS_RIGHT = KC.TD(KC.RSFT, KC.CW, tap_time=80)
+TAPDANCE_CAPS_LEFT = KC.TD(KC.LSFT, KC.CW, tap_time=200)
+TAPDANCE_CAPS_RIGHT = KC.TD(KC.RSFT, KC.CW, tap_time=200)
 
 my_keymap = process_keymap("keymap.json")
 
-# Replace KC.LSFT with TAPDANCE_CAPS
+# Replace KC.LSFT with TAPDANCE_CAPS_LEFT and KC.RSFT with TAPDANCE_CAPS_RIGHT
 for layer in my_keymap:
     for i, key in enumerate(layer):
         if key == KC.LSFT:
