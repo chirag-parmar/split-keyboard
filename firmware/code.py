@@ -33,42 +33,6 @@ split = Split(
 
 keyboard.modules.append(split)
 
-# Example: Print the contents of the JSON file
-def process_keymap(path):
-    # Specify the path to the JSON file
-    json_file = path
-    # Read the JSON file
-    with open(json_file) as file:
-        data = json.load(file)
-    
-    keymap = [None] * len(data["layers"])
-    for layer_index, layer in enumerate(data["layers"]):
-        layer_map = [None] * len(layer)
-        for index, key in enumerate(layer):
-            if "KC" in key:
-                translated_key =  key.split("_")[1]
-                if translated_key == "LT":
-                    translated_key = "LABK"
-                elif translated_key == "GT":
-                    translated_key = "RABK"
-                elif "MO(" in translated_key:
-                    layer_map[index] = "KC." + translated_key
-                    continue
-            else:
-                print("unknown key: ", key)
-                    
-            retrieved_key = KC.get(translated_key, None)
-            # check if the key exists
-            if retrieved_key != None:
-                layer_map[index] = retrieved_key
-            else:
-                print("NOT FOUND: ", translated_key)
-                
-        keymap[layer_index] = layer_map
-            
-
-    return keymap
-
 combos.combos = [
     Chord((KC.F1, KC.LCTL), KC.MO(1)),
     Chord((KC.F2, KC.RCTL), KC.MO(2)),
@@ -82,7 +46,26 @@ combos.combos = [
 TAPDANCE_CAPS_LEFT = KC.TD(KC.LSFT, KC.CW, tap_time=200)
 TAPDANCE_CAPS_RIGHT = KC.TD(KC.RSFT, KC.CW, tap_time=200)
 
-my_keymap = process_keymap("keymap.json")
+my_keymap = [
+    [
+        KC.GRV,     KC.Q,   KC.W,   KC.E,       KC.R,       KC.T,                                KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.LBRC,
+        KC.TAB,     KC.A,   KC.S,   KC.D,       KC.F,       KC.G,                                KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.QUOT,
+        KC.LGUI,    KC.Z,   KC.X,   KC.C,       KC.V,       KC.B,       KC.F5,       KC.F10,     KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.MINS,
+                                    KC.LCTL,    KC.LSFT,    KC.MO(1),   KC.BSPC,     KC.LPRN,    KC.MO(2),   KC.RSFT,    KC.RALT
+    ],
+    [
+        KC.ESC,  KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.VOLU,  KC.LEFT,  KC.UP,    KC.RGHT,  KC.MNXT,  KC.MPLY,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.VOLD,  KC.LEFT,  KC.DOWN,  KC.RGHT,  KC.MPRV,  KC.TRNS,
+                                      KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
+    ],
+    [
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
+                                      KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
+    ]
+]
 
 # Replace KC.LSFT with TAPDANCE_CAPS_LEFT and KC.RSFT with TAPDANCE_CAPS_RIGHT
 for layer in my_keymap:
