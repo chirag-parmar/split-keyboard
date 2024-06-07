@@ -1,15 +1,8 @@
 import board
 from kmk.bootcfg import bootcfg
-from storage import getmount
 
-name = str(getmount('/').label)
-
-sense_pin = board.A3
-source_pin = board.GP3
-
-if name.endswith('L'):
-    sense_pin = board.GP3
-    source_pin = board.GP14
+sense_pin = board.GP8
+source_pin = board.GP2
 
 applied = bootcfg(
     sense=sense_pin,  # column

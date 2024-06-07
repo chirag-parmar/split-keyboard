@@ -51,6 +51,9 @@ def process_keymap(path):
                     translated_key = "LABK"
                 elif translated_key == "GT":
                     translated_key = "RABK"
+                elif "MO(" in translated_key:
+                    layer_map[index] = "KC." + translated_key
+                    continue
             else:
                 print("unknown key: ", key)
                     
