@@ -34,7 +34,7 @@ split = Split(
 keyboard.modules.append(split)
 
 combos.combos = [
-    Chord((KC.F5, KC.LPRN), KC.SPC),
+    Chord((KC.F5, KC.LPRN), KC.LPRN),
     Chord((KC.F10, KC.BSPC), KC.ENT),
     # Chord((KC.LABK, KC.LCBR), KC.LBRC),
     # Chord((KC.RABK, KC.RCBR), KC.RBRC),
@@ -48,19 +48,19 @@ TAPDANCE_CAPS_RIGHT = KC.TD(KC.RSFT, KC.CW, tap_time=200)
 
 my_keymap = [
     [
-        KC.GRV,     KC.Q,   KC.W,   KC.E,       KC.R,       KC.T,                                KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.LBRC,
-        KC.TAB,     KC.A,   KC.S,   KC.D,       KC.F,       KC.G,                                KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.QUOT,
-        KC.LGUI,    KC.Z,   KC.X,   KC.C,       KC.V,       KC.B,       KC.F5,       KC.F10,     KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.MINS,
-                                    KC.LCTL,    KC.LSFT,    KC.MO(1),   KC.BSPC,     KC.LPRN,    KC.MO(2),   KC.RSFT,    KC.RALT
+        KC.GRV,     KC.Q,   KC.W,   KC.E,       KC.R,       KC.T,                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.LBRC,
+        KC.TAB,     KC.A,   KC.S,   KC.D,       KC.F,       KC.G,                               KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.QUOT,
+        KC.LGUI,    KC.Z,   KC.X,   KC.C,       KC.V,       KC.B,       KC.F5,      KC.RPRN,     KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.MINS,
+                                    KC.LCTL,    KC.LSFT,    KC.MO(1),   KC.SPC,     KC.BSPC,    KC.MO(2),   KC.RSFT,    KC.RALT
     ],
     [
-        KC.ESC,  KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
+        KC.ESC,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.VOLU,  KC.LEFT,  KC.UP,    KC.RGHT,  KC.MNXT,  KC.MPLY,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.VOLD,  KC.LEFT,  KC.DOWN,  KC.RGHT,  KC.MPRV,  KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
     ],
     [
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
+        KC.ESC,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
