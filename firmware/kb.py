@@ -22,6 +22,25 @@ row_wiring = (
     board.GP5
 )
 
+if name.endswith('_R'):
+    col_wiring = (
+        board.GP9,
+        board.GP28,
+        board.A3,
+        board.GP26,
+        board.GP27,
+        board.GP14,
+        board.GP15,
+        
+    )
+
+    row_wiring = (
+        board.GP3,
+        board.GP2,
+        board.GP5,
+        board.GP4
+    )
+
 
 # for the left side of the keyboard
 class KMKKeyboard(_KMKKeyboard):
@@ -40,3 +59,4 @@ class KMKKeyboard(_KMKKeyboard):
         14, 15, 16, 17, 18, 19, 20,             48, 47, 46, 45, 44, 43, 42,
                     24, 25, 26, 27,             55, 54, 53, 52,
     ]
+
