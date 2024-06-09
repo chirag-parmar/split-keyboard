@@ -33,41 +33,39 @@ split = Split(
 
 keyboard.modules.append(split)
 
+TD_LSFT = KC.TD(KC.LSFT, KC.CW, tap_time=200)
+TD_RSFT = KC.TD(KC.RSFT, KC.CW, tap_time=200)
+TD_LBRC = KC.TD(KC.LBRC, KC.RBRC, tap_time=100)
+TD_LPRN = KC.TD(KC.LPRN, KC.RPRN, tap_time=100)
+TD_MO = KC.TD(KC.MO(1), KC.MO(2), tap_time=200)
+
 combos.combos = [
-    # Chord((KC.LABK, KC.LCBR), KC.LBRC),
-    # Chord((KC.RABK, KC.RCBR), KC.RBRC),
+    Chord((26, 54), KC.ENT, match_coord=True),
     # Chord((KC.F1, KC.F2, KC.LCTL, KC.RCTL), KC.TG(3)),
     # Sequence((KC.F18, KC.F19, KC.F20), KC.MW_UP, timeout=1000),
     # Sequence((KC.F21, KC.F22, KC.F23), KC.MW_DN, timeout=1000)
 ]
 
-TAPDANCE_CAPS_LEFT = KC.TD(KC.LSFT, KC.CW, tap_time=200)
-TAPDANCE_CAPS_RIGHT = KC.TD(KC.RSFT, KC.CW, tap_time=200)
-
-my_keymap = [
+keyboard.keymap = [
     [
-        KC.GRV,     KC.Q,   KC.W,   KC.E,       KC.R,       KC.T,                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.LBRC,
+        KC.GRV,     KC.Q,   KC.W,   KC.E,       KC.R,       KC.T,                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.MINS,
         KC.TAB,     KC.A,   KC.S,   KC.D,       KC.F,       KC.G,                               KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.QUOT,
-        KC.LGUI,    KC.Z,   KC.X,   KC.C,       KC.V,       KC.B,       KC.LPRN,      KC.RPRN,  KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.MINS,
-                                    KC.LCTL,    KC.LSFT,    KC.SPC,     KC.MO(1),       KC.BSPC,  KC.ENT,     KC.RSFT,    KC.RALT
+        KC.LGUI,    KC.Z,   KC.X,   KC.C,       KC.V,       KC.B,       TD_LBRC,      TD_LPRN,  KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.BSLS,
+                                    KC.LCTL,    TD_LSFT,    KC.SPC,     TD_MO,     KC.BSPC,  KC.SPC,     TD_RSFT,    KC.RALT
     ],
     [
         KC.ESC,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.VOLU,  KC.LEFT,  KC.UP,    KC.RGHT,  KC.MNXT,  KC.MPLY,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.VOLD,  KC.LEFT,  KC.DOWN,  KC.RGHT,  KC.MPRV,  KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
+    ],
+    [
+        KC.ESC,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.MB_LMB,  KC.MW_UP,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MB_RMB,  KC.MW_DN,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
+                                      KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
     ]
 ]
-
-# Replace KC.LSFT with TAPDANCE_CAPS_LEFT and KC.RSFT with TAPDANCE_CAPS_RIGHT
-for layer in my_keymap:
-    for i, key in enumerate(layer):
-        if key == KC.LSFT:
-            layer[i] = TAPDANCE_CAPS_LEFT
-        elif key == KC.RSFT:
-            layer[i] = TAPDANCE_CAPS_RIGHT
-
-keyboard.keymap = my_keymap
 
 if __name__ == '__main__':
     keyboard.go()
