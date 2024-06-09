@@ -66,7 +66,7 @@ keyboard.keymap = [
     [
         KC.ESC,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.MW_UP,  KC.MS_LT, KC.MS_UP,  KC.MS_RT,  KC.TRNS,  KC.TRNS,
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MW_DN,  KC.MS_LT, KC.MS_DN,  KC.MS_RT,  KC.TRNS,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MW_DN,  KC.MS_LT, KC.MS_DN,  KC.MS_RT,  KC.TRNS, KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.MB_LMB,  KC.TRNS,      KC.TRNS,  KC.MB_RMB,  KC.TRNS,  KC.TRNS
     ]
 ]
