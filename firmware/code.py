@@ -7,6 +7,7 @@ from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.modules.combos import Combos, Chord, Sequence
 from kmk.modules.capsword import CapsWord
 from kmk.modules.tapdance import TapDance
+from kmk.modules.mouse_keys import MouseKeys
 
 keyboard = KMKKeyboard()
 
@@ -21,6 +22,9 @@ keyboard.modules.append(caps_word)
 
 tapdance = TapDance()
 keyboard.modules.append(tapdance)
+
+mouse_keys = MouseKeys()
+keyboard.modules.append(mouse_keys)
 
 split = Split(
     data_pin=keyboard.data_pin,
@@ -37,7 +41,7 @@ TD_LSFT = KC.TD(KC.LSFT, KC.CW, tap_time=200)
 TD_RSFT = KC.TD(KC.RSFT, KC.CW, tap_time=200)
 TD_LBRC = KC.TD(KC.LBRC, KC.RBRC, tap_time=100)
 TD_LPRN = KC.TD(KC.LPRN, KC.RPRN, tap_time=100)
-TD_MO = KC.TD(KC.MO(1), KC.MO(2), tap_time=200)
+TD_MO = KC.TD(KC.MO(1), KC.TG(2), tap_time=200)
 
 combos.combos = [
     Chord((26, 54), KC.ENT, match_coord=True),
@@ -61,9 +65,9 @@ keyboard.keymap = [
     ],
     [
         KC.ESC,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.EQL,
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.MB_LMB,  KC.MW_UP,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MB_RMB,  KC.MW_DN,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,
-                                      KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.MW_UP,  KC.MS_LT, KC.MS_UP,  KC.MS_RT,  KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MW_DN,  KC.MS_LT, KC.MS_DN,  KC.MS_RT,  KC.TRNS,
+                                      KC.TRNS,  KC.TRNS,  KC.MB_LMB,  KC.TRNS,      KC.TRNS,  KC.MB_RMB,  KC.TRNS,  KC.TRNS
     ]
 ]
 
