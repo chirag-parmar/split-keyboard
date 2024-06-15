@@ -39,8 +39,8 @@ keyboard.modules.append(split)
 
 TD_LSFT = KC.TD(KC.LSFT, KC.CW, tap_time=200)
 TD_RSFT = KC.TD(KC.RSFT, KC.CW, tap_time=200)
-TD_LBRC = KC.TD(KC.LBRC, KC.RBRC, tap_time=100)
-TD_LPRN = KC.TD(KC.LPRN, KC.RPRN, tap_time=100)
+TD_LBRC = KC.TD(KC.LBRC, KC.RBRC, tap_time=200)
+TD_LPRN = KC.TD(KC.LPRN, KC.RPRN, tap_time=200)
 TD_MO = KC.TD(KC.MO(1), KC.TG(2), tap_time=200)
 
 combos.combos = [
