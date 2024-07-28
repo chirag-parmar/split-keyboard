@@ -61,19 +61,24 @@ combos.combos = [
 # define vim macros
 VI_QUIT = KC.MACRO(
     Tap(KC.COLN),
-    Tap(KC.Q) 
+    Tap(KC.Q),
+    Tap(KC.ENT) 
 ) 
 
 VI_SAVE = KC.MACRO(
     Tap(KC.COLN),
-    Tap(KC.W) 
+    Tap(KC.W),
+    Tap(KC.ENT) 
 )
 
 VI_WRQT = KC.MACRO(
     Tap(KC.COLN),
     Tap(KC.W),
-    Tap(KC.Q) 
+    Tap(KC.Q),
+    Tap(KC.ENT) 
 )
+
+TD_WRQT = KC.TD(VI_SAVE, VI_WRQT, tap_time=200)
   
 # GENERAL RULES FOR CONVENIENCE
 #   do not define combos with keys from both sides, will require both hands. rather if combos are defined on one side you can one hands free
@@ -91,7 +96,7 @@ keyboard.keymap = [
         KC.ESC,     KC.Q,   KC.W,   KC.E,       KC.R,       KC.T,                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.BSPC,
         KC.TAB,     KC.A,   KC.S,   KC.D,       KC.F,       KC.G,                               KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.QUOT,
         KC.LCTL,    KC.Z,   KC.X,   KC.C,       KC.V,       KC.B,       KC.MINS,      KC.EQL,   KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.BSLS,
-                                    KC.TRNS,    KC.LSFT,    KC.SPC,     TD_MO_1,      KC.LGUI,  KC.ENT,     TD_MO_2,    KC.RALT
+                                    KC.TRNS,    KC.LSFT,    KC.SPC,     KC.LGUI,      TD_MO_1,  KC.ENT,     TD_MO_2,    KC.RALT
     ],
     [
         KC.GRV,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.DEL,
@@ -100,7 +105,7 @@ keyboard.keymap = [
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
     ],
     [
-        KC.TRNS,  VI_QUIT,  VI_SAVE,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,     KC.TRNS,  KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
+        KC.TRNS,  VI_QUIT,  TD_WRQT,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,     KC.TRNS,  KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.MW_UP,    KC.MS_DN, KC.MS_UP,   KC.MS_RT,  KC.TRNS,  KC.TRNS,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MW_DN,    KC.TRNS,  KC.TRNS,    KC.MS_LT,  KC.TRNS,  KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MB_LMB,   KC.TRNS,  KC.TRNS
