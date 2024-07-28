@@ -6,8 +6,11 @@ from kmk.modules.layers import Layers
 from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.modules.combos import Combos, Chord, Sequence
 from kmk.modules.capsword import CapsWord
-from kmk.modules.tapdance import TapDance
+from kmk.modules.Tapdance import TapDance
 from kmk.modules.mouse_keys import MouseKeys
+from kmk.modules.holdTap import HoldTap
+from kmk.modules.macros import Macros
+from kmk.modules.macros import Tap
 
 keyboard = KMKKeyboard()
 
@@ -20,11 +23,17 @@ keyboard.modules.append(combos)
 caps_word = CapsWord()
 keyboard.modules.append(caps_word)
 
-tapdance = TapDance()
-keyboard.modules.append(tapdance)
+HT = HoldTap()
+keyboard.modules.append(HT)
+
+Tapdance = TapDance()
+keyboard.modules.append(Tapdance)
 
 mouse_keys = MouseKeys()
 keyboard.modules.append(mouse_keys)
+
+macros = Macros()
+keyboard.modules.append(macros)
 
 split = Split(
     data_pin=keyboard.data_pin,
@@ -50,17 +59,29 @@ combos.combos = [
 
 
 # define vim macros
-VI_QUIT = KC.MACRO(":q")
-VI_WRQT = KC.MACRO(":wq")
-VI_SAVE = KC.MACRO(":w")
+VI_QUIT = KC.MACRO(
+    Tap(KC.COLN),
+    Tap(KC.Q) 
+) 
 
+VI_SAVE = KC.MACRO(
+    Tap(KC.COLN),
+    Tap(KC.W) 
+)
+
+VI_WRQT = KC.MACRO(
+    Tap(KC.COLN),
+    Tap(KC.W),
+    Tap(KC.Q) 
+)
+  
 # GENERAL RULES FOR CONVENIENCE
 #   do not define combos with keys from both sides, will require both hands. rather if combos are defined on one side you can one hands free
 #   using the same logic, define any control keys (volume up, previous, mouse up etc.) on the same side as the layer modifier that activates them.
-#   shortcuts/keys that are frequently used must not require an extra modifier. use tapdance to enable basic modifiers over layer modifiers.
-#   the above guideline applies really well for numbers, in a 40% keyboard numbers require a layer modifiers and to access special characters you will require an extra modifier(lsft). better activate tapdance on the modifiers. check TD_MO_1
+#   shortcuts/keys that are frequently used must not require an extra modifier. use Tapdance to enable basic modifiers over layer modifiers.
+#   the above guideline applies really well for numbers, in a 40% keyboard numbers require a layer modifiers and to access special characters you will require an extra modifier(lsft). better activate Tapdance on the modifiers. check TD_MO_1
 #   it also makes a lot of sense to replace basic modifiers with layer modifiers but keep the count of modifiers the same. like del usually requires fn + backspace but it can be kept as MO(1) + backspace. replacing modifiers only makes sense for modifiers that cannot be accomodated on the keyboard or modifiers that do not require to be accomodated because their frequency of usage is too less.
-#   some keys just dont' make sense on a normal keyboard like capslock. enable tapdance on the lsft key for locking caps.
+#   some keys just dont' make sense on a normal keyboard like capslock. enable Tapdance on the lsft key for locking caps.
 #   defining combos on different sides doesn't make a lot of sense  but I would still try to maintain the split for commonly occuring shortcuts. so that if you shift back to normal key board it is easier. example:  indentation shortcut
 #   lalyers more than 2 must be defined for really specific usecases and should not be momentary layer. either you activate and stay on that layer or deactivate and come back. no switching back and forth. example: gaming  
 #   The best use case of a custom designed keyboard is to make it more comfortable on your fingers, move the shift key to the thumn - no more stretching pinkies.
@@ -79,7 +100,7 @@ keyboard.keymap = [
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
     ],
     [
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,     KC.TRNS,  KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
+        KC.TRNS,  VI_QUIT,  VI_SAVE,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,     KC.TRNS,  KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.MW_UP,    KC.MS_DN, KC.MS_UP,   KC.MS_RT,  KC.TRNS,  KC.TRNS,
         KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MW_DN,    KC.TRNS,  KC.TRNS,    KC.MS_LT,  KC.TRNS,  KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MB_LMB,   KC.TRNS,  KC.TRNS
