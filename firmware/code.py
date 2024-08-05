@@ -100,8 +100,8 @@ keyboard.keymap = [
     ],
     [
         KC.GRV,   KC.N1,    KC.N2,    KC.N3,    KC.N4,    KC.N5,                              KC.N6,    KC.N7,    KC.N8,    KC.N9,    KC.N0,    KC.DEL,
-        KC.TRNS,  KC.TRNS,  KC.LBRC,  KC.RBRC,  KC.LPRN,  KC.RPRN,                            KC.VOLU,  KC.DOWN,  KC.UP,    KC.RGHT,  KC.MNXT,  KC.MPLY,
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.LCBR,  KC.RCBR,  KC.TRNS,        KC.TRNS,  KC.VOLD,  KC.TRNS,  KC.TRNS,  KC.LEFT,  KC.MPRV,  KC.TRNS,
+        KC.TRNS,  KC.TRNS,  KC.LBRC,  KC.RBRC,  KC.LPRN,  KC.RPRN,                            KC.VOLU,  KC.LEFT,  KC.UP,    KC.RGHT,  KC.MNXT,  KC.MPLY,
+        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.LCBR,  KC.RCBR,  KC.TRNS,        KC.TRNS,  KC.VOLD,  KC.TRNS,  KC.DOWN,  KC.TRNS,  KC.MPRV,  KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
     ],
     [
