@@ -57,29 +57,7 @@ combos.combos = [
     # Sequence((KC.F21, KC.F22, KC.F23), KC.MW_DN, timeout=1000)
 ]
 
-
-# define vim macros
-VI_QUIT = KC.MACRO(
-    Tap(KC.COLN),
-    Tap(KC.Q),
-    Tap(KC.ENT) 
-) 
-
-VI_SAVE = KC.MACRO(
-    Tap(KC.COLN),
-    Tap(KC.W),
-    Tap(KC.ENT) 
-)
-
-VI_WRQT = KC.MACRO(
-    Tap(KC.COLN),
-    Tap(KC.W),
-    Tap(KC.Q),
-    Tap(KC.ENT) 
-)
-
-TD_WRQT = KC.TD(VI_SAVE, VI_WRQT, tap_time=200)
-  
+ 
 # GENERAL RULES FOR CONVENIENCE
 #   do not define combos with keys from both sides, will require both hands. rather if combos are defined on one side you can one hands free
 #   using the same logic, define any control keys (volume up, previous, mouse up etc.) on the same side as the layer modifier that activates them.
@@ -105,10 +83,10 @@ keyboard.keymap = [
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
     ],
     [
-        KC.TRNS,  VI_QUIT,  TD_WRQT,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.TRNS,     KC.TRNS,  KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,                            KC.MW_UP,    KC.MS_DN, KC.MS_UP,   KC.MS_RT,  KC.TRNS,  KC.TRNS,
-        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MW_DN,    KC.TRNS,  KC.TRNS,    KC.MS_LT,  KC.TRNS,  KC.TRNS,
-                                      KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.MB_LMB,   KC.TRNS,  KC.TRNS
+        KC.TRNS,  KC.F1,    KC.F2,    KC.F3,    KC.F4,    KC.F5,                              KC.TRNS,     KC.TRNS,   KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.F6,    KC.F7,    KC.F8,    KC.F9,    KC.F10,                             KC.TRNS,     KC.MS_LT,  KC.MS_UP,   KC.MS_RT,  KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.F11,   KC.F12,   KC.F13,   KC.F23,   KC.F24,   KC.TRNS,        KC.TRNS,  KC.TRNS,     KC.MB_LMB, KC.MS_DN,   KC.MS_RMB, KC.TRNS,  KC.TRNS,
+                                      KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,     KC.TRNS,   KC.TRNS
     ]
 ]
 
