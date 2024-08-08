@@ -83,9 +83,9 @@ keyboard.keymap = [
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS
     ],
     [
-        KC.TRNS,  KC.F1,    KC.F2,    KC.F3,    KC.F4,    KC.F5,                              KC.TRNS,     KC.TRNS,   KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
-        KC.TRNS,  KC.F6,    KC.F7,    KC.F8,    KC.F9,    KC.F10,                             KC.TRNS,     KC.MS_LT,  KC.MS_UP,   KC.MS_RT,  KC.TRNS,  KC.TRNS,
-        KC.TRNS,  KC.F11,   KC.F12,   KC.F13,   KC.F23,   KC.F24,   KC.TRNS,        KC.TRNS,  KC.TRNS,     KC.MB_LMB, KC.MS_DN,   KC.MS_RMB, KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.F1,    KC.F2,    KC.F3,    KC.F4,    KC.TRNS,                              KC.TRNS,     KC.TRNS,   KC.TRNS,    KC.TRNS,   KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.F5,    KC.F6,    KC.F7,    KC.F8,    KC.TRNS,                             KC.TRNS,     KC.MS_LT,  KC.MS_UP,   KC.MS_RT,  KC.TRNS,  KC.TRNS,
+        KC.TRNS,  KC.F9,    KC.F10,   KC.F11,   KC.F12,   KC.F13,   KC.TRNS,        KC.TRNS,  KC.TRNS,     KC.MB_LMB, KC.MS_DN,   KC.MS_RMB, KC.TRNS,  KC.TRNS,
                                       KC.TRNS,  KC.TRNS,  KC.TRNS,  KC.TRNS,        KC.TRNS,  KC.TRNS,     KC.TRNS,   KC.TRNS
     ]
 ]
